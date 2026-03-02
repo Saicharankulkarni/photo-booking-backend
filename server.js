@@ -9,7 +9,11 @@ const app = express();
 /* ===============================
    🔥 MIDDLEWARE
 ================================ */
-app.use(cors()); // Fix CORS error
+app.use(cors({
+  origin: "*",
+  methods: ["GET","POST","PUT","DELETE"],
+  allowedHeaders: ["Content-Type","Authorization"]
+}));
 app.use(express.json());
 
 /* ===============================
